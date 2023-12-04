@@ -1,0 +1,47 @@
+1. Number of Neurons 																			[50,100,200,250,500]	--->	[100]	*1*
+
+2. Number of branches 																			[5,10,20]		--->	[10] *1*
+
+3. Number of Synapses 																			vvvvvv
+
+	3.1 Inhibitory network control 																!!NS!!	*SET AT 500, WITH INTERNAL MULTIPLIERS(by george)*		
+
+	3.2 Pattern to hidden 																		[1000,2000,3000,3500,4000,5000]		--->	[2000,3500,5000]	*3*	
+
+	3.3 Label to hidden 																		[1,2,3] ---> [2]*0.8*neurons		*1*
+
+	3.4 Lateral inhibition 																		[1,2,3,4,5,6] ---> [4]*0.8*neurons 	*1*
+
+5. Weight initialization values.  *Read that He and Xavier init shouldn't be used in my case*	[0, 0.1, 0.2] [0.2, 0.3] ---> [0.1] [0.2]  *1,1*
+
+6. Local learning rate slope																	[10,50,100,250,500,1000]	---> [10,50,1000]	*3*
+
+7. Local learning rate change point																[0.3,0.4,0.5,0.6,0.7] ---> [0.3,0.5,0.7]	*3*
+
+8. Local learning rate max and min values  														[0.01] [0.001,0.0001,0.00001]	---> [0.01] [0.0001]	*1,1*
+
+9. Turnover point.																				vvvvvv
+
+	9.1 # of iterations to turnover. 															[5,10,20,30,40] ---> [10,20]	*2*	
+
+	9.2	whether it should be dynamic or not. 													!!NS!!
+
+	9.3 # of synapses to be pruned, if any. 													[1,0.9,0.8,0.7]	---> [1] *1*
+
+	9.4 weight turnover threshold. 																Wmax+[0,0.05,0.1]	(should I check cases of <Wmax)		---> Wmax + [0] *1*
+
+11. Stoping criterion point(once written).														vvvvvv
+
+	11.1 # of synapses with lr > lr threshold 													[0.5,0.6,0.7,0.8,0.9] ---> [0.5, 0.7] *2*
+
+	11.2 lr threshold																			!!NS!!
+
+12. Global,local or both protein synthesis.														!!NS!!(-G, -L, both, later though)
+
+13. Input pixel to hertz formula.(max input firing rate) 										[20,25,30,35,40,50,60]	---> [25] *1*
+
+14. Label neuron firing rate.																	[20,25,30,35,40,50,60] ---> [40] *1*
+
+15. Biological parameters to play with post tuning (CREB decay rate etc.)						!!NS!!(-n shuts down CREB, later though)
+
+SEEDS/RUNS 																						*5*
